@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="1dp"
+        tools:ignore="MissingConstraints">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="11dp"
+            android:background="#FFFFFFFF">
+
+            <Button
+                android:id="@+id/prevMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFFFF"
+                android:textColor="#FFC1C1C1"
+                android:textSize="16sp"
+                android:fontFamily="Appl SD Gothic Neo"
+                android:height="19dp"
+                android:width="23dp"
+                android:text="prev"
+                android:layout_weight="1"
+                />
+            
+            <TextView
+                android:id="@+id/nowMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:height="25dp"
+                android:width="81dp"
+                android:lineSpacingMultiplier="1.47"
+                android:textSize="17sp"
+                android:textColor="#FF000000"
+                android:fontFamily="Note Sans CJK KR"
+                android:text="now"
+                android:layout_weight="8"
+                />
+
+            <Button
+                android:id="@+id/nextMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFFFF"
+                android:textColor="#FFC1C1C1"
+                android:textSize="16sp"
+                android:fontFamily="Appl SD Gothic Neo"
+                android:height="19dp"
+                android:width="23dp"
+                android:text="next"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:layout_gravity="center_horizontal"
+            android:background="#FFFFFFFF">
+
+            <TableRow
+                android:paddingLeft="21dp"
+                android:paddingRight="21dp"
+                android:background="@drawable/calendar_bg">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:fontFamily="Apple SD Gothic Neo"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="일"
+                    android:textColor="#FFD0021B"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    style="@style/YoilFont"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="월"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="화"
+                    style="@style/YoilFont"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="수"
+                    style="@style/YoilFont"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="목"
+                    style="@style/YoilFont"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="금"
+                    style="@style/YoilFont"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:height="44dp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="2.94"
+                    android:text="토"
+                    style="@style/YoilFont"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+        </TableLayout>
+    <GridView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid"
+        android:paddingRight="21dp"
+        android:paddingLeft="21dp"
+        android:numColumns="7"
+        android:background="#FFFFFFFF"
+       ></GridView>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

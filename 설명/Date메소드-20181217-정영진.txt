@@ -1,0 +1,1 @@
+이전에 만든 XML과 datelist.java 를 활용한 메소드

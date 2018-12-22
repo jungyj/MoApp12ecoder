@@ -1,0 +1,63 @@
+    public void doPrev(View v)
+    {
+        int y = cal.get(Calendar.YEAR);
+        int m = cal.get(Calendar.MONTH)-1;
+
+        cal.set(y,m,1);
+
+        doshow();
+    }
+
+    public void doNext(View v)
+    {
+        int y = cal.get(Calendar.YEAR);
+        int m = cal.get(Calendar.MONTH)+1;
+
+        cal.set(y,m,1);
+
+        doshow();
+    }
+
+    private void doshow()
+    {
+        adt.clear();
+
+        int y = cal.get(Calendar.YEAR);
+        int m = cal.get(Calendar.MONTH)+1;
+        date.setText(y+"년 "+m+"월");
+        prevM.setText((m-1)+"월");
+        nextM.setText((m+1)+"월");
+
+        int sYoil = cal.get(Calendar.DAY_OF_WEEK);
+
+        for(int i=1;i<sYoil;i++)
+        {
+            boolean isTake = false;
+            CalendarItem item = new CalendarItem(Integer.toString(y),Integer.toString(m),isTake);
+            adt.add(item);
+        }
+
+        int IDay = getLastDay(y,m);
+
+        for(int i=1;i<=IDay;i++)
+        {
+            boolean isTake = false;
+            if(i%2==0)
+                isTake=true;
+
+            cal.set(y,cal.get(Calendar.MONTH),i);
+            int yoil = cal.get(Calendar.DAY_OF_WEEK);
+
+            CalendarItem item = new CalendarItem(Integer.toString(y),Integer.toString(m),Integer.toString(i),yoil,isTake);
+            adt.add(item);
+        }
+        grid.setAdapter(adt);
+    }
+
+    private int getLastDay(int year,int month)
+    {
+        Date d = new Date(year,month,1);
+        d.setHours(d.getDay()-1*24);
+        SimpleDateFormat f = new SimpleDateFormat("dd");
+        return Integer.parseInt(f.format(d));
+    }

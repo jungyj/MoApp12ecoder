@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="18dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/btn_popup_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="파일 명 - 편집"
+                android:textColor="#FF212121"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFECECEC">
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="#FFF8F7F7">
+
+            <ImageView
+                android:layout_width="318dp"
+                android:layout_height="116dp"
+                android:layout_gravity="center"
+                android:background="@drawable/back"
+                android:layout_marginTop="16dp"/>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="142dp"
+                android:background="@drawable/img_pin03"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="사운드 영역"
+                android:layout_marginTop="16dp"/>
+
+        </FrameLayout>
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="#FFF8F7F7">
+
+
+            <LinearLayout
+                android:layout_width="86dp"
+                android:layout_height="130dp"
+                android:layout_marginLeft="38.5dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:background="@drawable/btn_3sprevious01"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingTop="4dp"
+                    android:text="3초 전으로"
+                    android:textSize="15dp"
+                    android:textColor="#FFFD6200"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_play01"/>
+
+            <LinearLayout
+                android:layout_width="86dp"
+                android:layout_height="130dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="38.5dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:background="@drawable/btn_3snext01"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:paddingTop="4dp"
+                    android:text="3초 뒤로"
+                    android:textSize="15dp"
+                    android:textColor="#FFFD6200"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="318dp"
+            android:layout_height="1dp"
+            android:background="#FFECECEC"
+            android:layout_gravity="center_horizontal">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#FFF8F7F7">
+
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginLeft="21dp">
+
+                <Button
+                    android:layout_width="15dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/icon_bookmark02"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="북마크"
+                    android:textSize="10dp"
+                    android:paddingTop="4dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="68dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="21dp"
+                android:background="#e4e4e4">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="53dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="#e4e4e4">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="53dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="#e4e4e4">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="53dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="#e4e4e4">
+                
+            </LinearLayout>
+        </LinearLayout>
+        
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#FFF8F7F7">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/btn_check01_on"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="북마크만 자르고 저장"
+                    android:paddingLeft="5dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFECECEC">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="자르기"
+                android:textColor="#000000"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="저장"
+                android:textColor="#FFFFFF"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#FFFE6200"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</FrameLayout>

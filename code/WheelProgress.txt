@@ -1,0 +1,6 @@
+
+  	ProgressWheel pWheel;
+
+            pWheel = (ProgressWheel) findViewById(R.id.wheelprogress);
+                                  Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.wheel);
+                                  pWheel.setAnimation(animation);

@@ -1,0 +1,58 @@
+ MediaRecorder mp=null;
+
+private void stopRecord(){
+        if(mp!=null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
+        second.cancel();
+        String todayData = dateFormat.format(new Date());
+        mFileAdapter.addItem("file"+fileNum,todayData,time_sec,soundFile.length()/100);
+
+        fileListView.setAdapter(mFileAdapter);
+    }
+
+
+    MediaPlayer player;
+    File dir = new File(Environment.getExternalStorageDirectory(),"sounds");
+    File soundFile;
+
+    private void startRecord(){
+
+        fileNum++;
+
+        if(mp==null){
+
+            if(!dir.exists()){
+                dir.mkdirs();
+            }
+
+            soundFile  = new File(dir+Integer.toString(fileNum)+".amr");
+            if(!soundFile.exists()){
+                try {
+                    soundFile.createNewFile();
+                } catch (IOException e) {
+                    Log.i("fileCreate","Fale");
+                    e.printStackTrace();
+                }
+            }
+            mp = new MediaRecorder();
+            mp.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mp.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+            mp.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
+
+
+            mp.setOutputFile(soundFile.getAbsolutePath());
+
+            try {
+                mp.prepare();
+                mp.start();
+            } catch (IOException e) {
+                Log.i("fileRecording","Fale");
+                e.printStackTrace();
+            }
+
+
+        }
+    }

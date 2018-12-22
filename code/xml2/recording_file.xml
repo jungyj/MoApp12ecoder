@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="71dp"
+    android:orientation="horizontal"
+    android:background="#FFFFFFFF"
+    >
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:background="@drawable/icon_play01"
+            android:layout_gravity="center"
+            android:layout_marginLeft="21dp"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Roboto"
+                android:textColor="#FF212121"
+                android:textSize="19sp"
+                android:text="file 1"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="13dp"/>
+
+            <TextView
+                android:id="@+id/fileData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fileData"
+                android:fontFamily="Roboto"
+                android:textColor="#FFC1C1C1"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.14"
+                android:layout_marginLeft="21dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="21dp">
+
+            <TextView
+                android:id="@+id/fileTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily = "Noto Sans CJK KR"
+                android:textColor="#FF212121"
+                android:textSize="14sp"
+                android:height="20dp"
+                android:lineSpacingMultiplier="1.43"
+                android:text="00:00:34"
+                android:width="58dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="17dp" />
+
+            <TextView
+                android:id="@+id/fileSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="Noto Sans CJK KR"
+                android:textColor="#FFC1C1C1"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_gravity="right"
+                android:height="20dp"
+                android:lineSpacingMultiplier="1.43"
+                android:text="100.02KB"
+                android:width="64dp" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

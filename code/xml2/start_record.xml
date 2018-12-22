@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/icon_logo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="레코더 톡"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:textColor="#FF212121" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|right"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:src="@drawable/btn_help"
+                android:onClick="GoHelp"/>
+
+            <ImageView
+                android:id="@+id/menu1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|right"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:src="@drawable/btn_menu01" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFECECEC">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="녹음"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#FF212121"
+                android:background="#FFFFFF"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="목록"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#FF212121"
+                android:background="#FFFFFF"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_weight="1"
+                android:background="#FFFD5F00"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_weight="1"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFECECEC">
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:background="#FFF8F7F7">
+
+            <FrameLayout
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/btn_ststop02">
+
+                <com.app.progresviews.ProgressWheel
+                    android:id="@+id/wheelprogress"
+                    android:layout_width="310dp"
+                    android:layout_height="310dp"
+                    app:barWidth="10dp"
+                    android:layout_gravity="center"
+                    app:countText=""
+                    app:definitionText=""
+                    app:progressColor="#FFFD5F00"
+                    app:percentage="40"/>
+                
+                <LinearLayout
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginRight="50dp">
+
+                    <Button
+                        android:layout_width="52.5dp"
+                        android:layout_height="52.5dp"
+                        android:background="@drawable/btn_ststop01"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="일시정지"
+                        android:paddingTop="4dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="65dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="50dp">
+
+                    <Button
+                        android:layout_width="52.5dp"
+                        android:layout_height="52.5dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/btn_stop"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="녹음완료1"
+                        android:paddingTop="4dp"
+                        android:gravity="center"/>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|bottom"
+                    android:text="00:00:00"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="80dp"/>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFF8F7F7">
+
+
+            <Spinner
+                android:id="@+id/spin1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+
+                />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,136 @@
+if (position == 0) { //tab1
+                      view = View.inflate(mContext, R.layout.activity_main_recoding, null);
+
+                      final View start_record = view.findViewById(R.id.lay_startrecoder);//before record
+                      final View stop_record = view.findViewById(R.id.lay_recoding); //after record
+
+                      //≥Ï¿ΩΩ√¿€
+                      view.findViewById(R.id.start_record).setOnClickListener(new View.OnClickListener(){
+
+                          @Override
+                          public void onClick(View v) {
+                              flag=true;
+
+                              start_record.setVisibility(View.GONE); //off
+                              stop_record.setVisibility(View.VISIBLE);//on
+
+                              spinner = (Spinner)findViewById(R.id.spin1);
+
+
+                              pWheel = (ProgressWheel) findViewById(R.id.wheelprogress);
+                                  Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.wheel);
+                                  pWheel.setAnimation(animation);
+
+                              viewPager1.setPagingEnabled(false);
+                              startRecord();
+                              time_sec = 0;
+                              second = new TimerTask() {
+                                  @Override
+                                  public void run() {
+                                      time_sec++;
+                                      timerStyle();
+                                  }
+                              };
+                              Timer timer = new Timer();
+                              timer.schedule(second,0,1000);
+
+                          }
+                      });
+
+                      //≥Ï¿Ωøœ∑·
+                    view.findViewById(R.id.stop_record).setOnClickListener(new View.OnClickListener(){
+
+                        @Override
+                        public void onClick(View v) {
+                            stopRecord();
+
+                            start_record.setVisibility(View.VISIBLE);
+                            stop_record.setVisibility(View.GONE);
+
+                            viewPager1.setPagingEnabled(true);
+
+
+                        }
+                    });
+
+                    // view = View.inflate(mContext,R.layout.start_record,null);
+
+
+                } else { //tab2
+                    view = View.inflate(mContext, R.layout.activity_main_histroy, null);
+
+                    final Display display = getWindowManager().getDefaultDisplay();
+                    Point size2 = new Point();
+                    display.getSize(size2);
+                    lcdWidth2 = size2.x;
+                    lcdHeight2 = size2.y;
+
+                    view_viewpager_select_bar2 = view.findViewById(R.id.view_viewpager_select_bar2);
+
+                    viewPager2 = view.findViewById(R.id.viewPager2);
+                    viewPager2.setAdapter(mPagerAdapter2);
+
+                    viewPager2.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+                        @Override
+                        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                        }
+
+                        @Override
+                        public void onPageSelected(int position) {
+
+                            String onColor = "#FF212121";
+                            String offColor = "#878787";
+
+                            if (position == 0) {
+                                view_viewpager_select_bar2.setTranslationX(0);
+
+                                Button button1 = (Button) findViewById(R.id.allTap);
+                                Button button2 = (Button) findViewById(R.id.DayTap);
+                                Button button3 = (Button) findViewById(R.id.catTap);
+
+                                button1.setTextColor(Color.parseColor(onColor));
+                                button2.setTextColor(Color.parseColor(offColor));
+                                button3.setTextColor(Color.parseColor(offColor));
+
+                            }
+
+                            else if (position == 1){
+                                view_viewpager_select_bar2.setTranslationX(lcdWidth2 / 3);
+
+                                Button button1 = (Button) findViewById(R.id.allTap);
+                                Button button2 = (Button) findViewById(R.id.DayTap);
+                                Button button3 = (Button) findViewById(R.id.catTap);
+
+                                button1.setTextColor(Color.parseColor(offColor));
+                                button2.setTextColor(Color.parseColor(onColor));
+                                button3.setTextColor(Color.parseColor(offColor));
+
+                            }
+
+                            else {
+                                view_viewpager_select_bar2.setTranslationX(lcdWidth2 * 2 / 3);
+
+                                Button button1 = (Button) findViewById(R.id.allTap);
+                                Button button2 = (Button) findViewById(R.id.DayTap);
+                                Button button3 = (Button) findViewById(R.id.catTap);
+
+                                button1.setTextColor(Color.parseColor(offColor));
+                                button2.setTextColor(Color.parseColor(offColor));
+                                button3.setTextColor(Color.parseColor(onColor));
+
+                            }
+                        }
+
+                        @Override
+                        public void onPageScrollStateChanged(int state) {
+
+                        }
+                    });
+                }
+
+                container.addView(view, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+
+
+
+                return view;

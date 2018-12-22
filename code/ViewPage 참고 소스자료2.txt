@@ -1,0 +1,16 @@
+public Object instantiateItem(final ViewGroup container, final int position) {
+            View view = null;
+
+            try {
+
+                if (position == 0) { //tab1
+
+                } else { //tab2
+  
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+  }

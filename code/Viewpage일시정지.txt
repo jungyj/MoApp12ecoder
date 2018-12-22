@@ -1,0 +1,31 @@
+ second = new TimerTask() {
+                                  @Override
+                                  public void run() {
+                                      if(flag==true) {
+                                          time_sec++;
+
+                                      }
+                                      timerStyle();
+                                  }
+                              };
+
+
+view.findViewById(R.id.pause_record).setOnClickListener(new View.OnClickListener() {
+                          @Override
+                          public void onClick(View v) {
+
+                              cnt++;
+
+                              if (cnt%2==0){
+                                  flag=true;
+                                  ((Button)findViewById(R.id.pause_record)).setBackgroundResource(R.drawable.btn_ststop01);
+                                  ((TextView)findViewById(R.id.textview1)).setText("일시정지");
+                              }else{
+                                  flag=false;
+                                  ((Button)findViewById(R.id.pause_record)).setBackgroundResource(R.drawable.btn_play01);
+                                  ((TextView)findViewById(R.id.textview1)).setText("재생");
+                              }
+
+
+                          }
+                      });

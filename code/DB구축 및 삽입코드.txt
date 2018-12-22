@@ -1,0 +1,44 @@
+     sqlDB = init();
+     create_Table();
+
+ private SQLiteDatabase init(){
+        SQLiteDatabase db = null;
+        File file = new File(getFilesDir(),"record.db");
+        try{
+            db = SQLiteDatabase.openOrCreateDatabase(file,null);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return db;
+    }
+
+    private void create_Table(){
+        if(sqlDB != null){
+            String sqltbl= "CREATE TABLE IF NOT EXISTS RECORD_T ("+
+                    "FNO INTEGER NOT NULL,"+
+                    "FNAME TEXT,"+
+                    "CATE TEXT)";
+            sqlDB.execSQL(sqltbl);
+        }
+    }
+}
+
+
+ private void stopRecord(){
+        if(mp!=null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
+        second.cancel();
+        String todayData = dateFormat.format(new Date());
+        mFileAdapter.addItem("file"+fileNum,todayData,time_sec,soundFile.length()/100);
+        String sqlInsert = "INSERT INTO RECORD_T "+
+                "(no,FNAME,CATE) VALUES ("+
+                fileNum+","+
+                "'FILE"+fileNum+"',"+
+                "'"+sqlStr+"')";
+        sqlDB.execSQL(sqlInsert);
+
+        fileListView.setAdapter(mFileAdapter);
+    }
